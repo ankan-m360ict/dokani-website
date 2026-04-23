@@ -7,7 +7,7 @@ export default function ContactPage() {
   const [sent, setSent] = useState(false);
   const { t } = useT();
 
-  const phoneNumber = '8801904727185';
+  const phoneNumber = '8801958398337';
 
   return (
     <>
