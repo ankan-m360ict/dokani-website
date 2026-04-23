@@ -13,7 +13,7 @@ export default function AboutPage() {
   ];
   const stats = [
     { v: '40+', l: t('about.statBusinesses') },
-    { v: '৳12B+', l: t('about.statTx') },
+    { v: '৳12M+', l: t('about.statTx') },
     { v: '20+', l: t('about.statModules') },
     { v: '99.98%', l: t('about.statUptime') },
   ];
