@@ -16,6 +16,9 @@ import dashboardImg from '@/assets/dokani-dashboard.png';
 import posImg from '@/assets/dokani-pos.png';
 import accountsImg from '@/assets/dokani-accounts.png';
 import loginImg from '@/assets/dokani-login.png';
+import inventoryImg from '@/assets/dokani-inventory.png';
+import userImg from '@/assets/dokani-user.png';
+
 import Image, { StaticImageData } from 'next/image';
 
 type SectionKey = 'dashboard' | 'pos' | 'accounts' | 'security' | 'inventory' | 'teams';
@@ -30,8 +33,8 @@ const sections: {
   { key: 'pos', icon: ShoppingCart, image: posImg, alt: 'Dokani POS' },
   { key: 'accounts', icon: Wallet, image: accountsImg, alt: 'Dokani accounts' },
   { key: 'security', icon: ShieldCheck, image: loginImg, alt: 'Dokani login' },
-  { key: 'inventory', icon: Boxes, alt: 'Inventory' },
-  { key: 'teams', icon: Users, alt: 'Teams' },
+  { key: 'inventory', icon: Boxes, image: inventoryImg, alt: 'Inventory' },
+  { key: 'teams', icon: Users, image: userImg, alt: 'Teams' },
 ];
 
 export default function FeaturesPage() {
@@ -80,7 +83,7 @@ export default function FeaturesPage() {
             <div className='relative'>
               <div className='absolute -inset-4 -z-10 rounded-3xl bg-linear-to-br from-primary/20 to-primary-glow/10 blur-2xl' />
               {s.image ? (
-                <div className='overflow-hidden rounded-2xl border border-border bg-card shadow-card'>
+                <div className='overflow-hidden rounded-sm border border-border bg-card shadow-card'>
                   <Image src={s.image} alt={s.alt} loading='lazy' className='block w-full' />
                 </div>
               ) : (
