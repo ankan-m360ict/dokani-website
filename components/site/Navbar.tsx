@@ -74,18 +74,19 @@ export function Navbar() {
       {open && (
         <div className='border-t border-border bg-background md:hidden'>
           <div className='mx-auto flex max-w-7xl flex-col gap-1 px-5 py-3'>
-            {links.map((l) => (
-              <Link
-                key={l.to}
-                href={l.to}
-                onClick={() => setOpen(false)}
-                className='rounded-lg px-3 py-2.5 text-sm font-medium text-foreground hover:bg-primary-soft'
-                // activeOptions={{ exact: l.to === "/" }}
-                // activeProps={{ className: "rounded-lg px-3 py-2.5 text-sm font-semibold text-primary bg-primary-soft" }}
-              >
-                {l.label}
-              </Link>
-            ))}
+            {links.map((l) => {
+              const isActive = l.to === '/' ? pathname === '/' : pathname.startsWith(l.to);
+
+              return (
+                <Link
+                  key={l.to}
+                  href={l.to}
+                  className={cn(baseClass, isActive ? activeClass : inactiveClass)}
+                >
+                  {l.label}
+                </Link>
+              );
+            })}
             <Link
               href='/pricing'
               onClick={() => setOpen(false)}
