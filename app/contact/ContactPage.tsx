@@ -7,6 +7,8 @@ export default function ContactPage() {
   const [sent, setSent] = useState(false);
   const { t } = useT();
 
+  const phoneNumber = '8801904727185';
+
   return (
     <>
       <section className='mx-auto max-w-4xl px-5 pb-12 pt-20 text-center md:px-8 md:pt-28'>
@@ -87,7 +89,38 @@ export default function ContactPage() {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            setSent(true);
+
+            const form = e.currentTarget;
+            const formData = new FormData(form);
+
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const company = formData.get('company');
+            const phone = formData.get('phone');
+            const message = formData.get('message');
+
+            const text = `
+New Lead Notification – Dokani
+
+A new inquiry has been submitted via the website.
+
+Contact Information:
+Name: ${name}
+Email: ${email}
+Company: ${company || 'N/A'}
+Phone: ${phone || 'N/A'}
+
+Inquiry Details:
+${message}
+
+Source: Dokani Website
+`;
+
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(text)}`;
+
+            window.open(whatsappUrl, '_blank');
+
+            setTimeout(() => setSent(true), 500);
           }}
           className='space-y-4 rounded-3xl border border-border bg-card p-7 md:col-span-3 md:p-9'
         >
@@ -118,6 +151,7 @@ export default function ContactPage() {
                 </label>
                 <textarea
                   rows={5}
+                  name='message'
                   required
                   placeholder={t('contact.helpPh')}
                   className='w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20'
