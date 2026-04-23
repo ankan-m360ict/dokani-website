@@ -22,25 +22,6 @@ import dashboardImg from '@/assets/dokani-dashboard.png';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// export const Route = createFileRoute('/')({
-//   head: () => ({
-//     meta: [
-//       { title: 'Dokani — Manage Your Business Smartly' },
-//       {
-//         name: 'description',
-//         content:
-//           'Run sales, inventory, accounts and operations from one beautiful dashboard. Built for SMEs, shops and wholesalers.',
-//       },
-//       { property: 'og:title', content: 'Dokani — Manage Your Business Smartly' },
-//       {
-//         property: 'og:description',
-//         content: 'The complete inventory management system for modern businesses.',
-//       },
-//     ],
-//   }),
-//   component: Index,
-// });
-
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },

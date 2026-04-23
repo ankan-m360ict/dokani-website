@@ -18,25 +18,6 @@ import accountsImg from '@/assets/dokani-accounts.png';
 import loginImg from '@/assets/dokani-login.png';
 import Image, { StaticImageData } from 'next/image';
 
-// export const Route = createFileRoute('/features')({
-//   head: () => ({
-//     meta: [
-//       { title: 'Features — Dokani' },
-//       {
-//         name: 'description',
-//         content:
-//           'Inventory tracking, sales & purchase automation, accounting, analytics and granular roles — all built into Dokani.',
-//       },
-//       { property: 'og:title', content: 'Features — Dokani' },
-//       {
-//         property: 'og:description',
-//         content: 'Everything you need to run a modern business, beautifully.',
-//       },
-//     ],
-//   }),
-//   component: FeaturesPage,
-// });
-
 type SectionKey = 'dashboard' | 'pos' | 'accounts' | 'security' | 'inventory' | 'teams';
 
 const sections: {
@@ -97,13 +78,13 @@ export default function FeaturesPage() {
               </ul>
             </div>
             <div className='relative'>
-              <div className='absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-primary/20 to-primary-glow/10 blur-2xl' />
+              <div className='absolute -inset-4 -z-10 rounded-3xl bg-linear-to-br from-primary/20 to-primary-glow/10 blur-2xl' />
               {s.image ? (
                 <div className='overflow-hidden rounded-2xl border border-border bg-card shadow-card'>
                   <Image src={s.image} alt={s.alt} loading='lazy' className='block w-full' />
                 </div>
               ) : (
-                <div className='aspect-[4/3] rounded-2xl border border-border bg-card p-6 shadow-card'>
+                <div className='aspect-4/3 rounded-2xl border border-border bg-card p-6 shadow-card'>
                   <div className='flex items-center justify-between'>
                     <p className='font-display text-sm font-semibold text-ink'>
                       {t(`featureSections.${s.key}Tag`)}
@@ -122,7 +103,7 @@ export default function FeaturesPage() {
                     ))}
                   </div>
                   <div className='mt-5 h-2 w-full rounded-full bg-surface'>
-                    <div className='h-2 w-2/3 rounded-full bg-gradient-to-r from-primary to-primary-glow' />
+                    <div className='h-2 w-2/3 rounded-full bg-linear-to-r from-primary to-primary-glow' />
                   </div>
                 </div>
               )}

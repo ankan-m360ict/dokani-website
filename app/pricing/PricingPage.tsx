@@ -6,22 +6,6 @@ import { CTASection } from '@/components/site/CTASection';
 import { useT } from '@/lib/i18n';
 import Link from 'next/link';
 
-// export const Route = createFileRoute('/pricing')({
-//   head: () => ({
-//     meta: [
-//       { title: 'Pricing — Dokani' },
-//       {
-//         name: 'description',
-//         content:
-//           'One simple plan. ৳1,200/month or ৳12,000/year. All features included. Start your free 14-day trial.',
-//       },
-//       { property: 'og:title', content: 'Pricing — Dokani' },
-//       { property: 'og:description', content: 'One plan. Everything included. Monthly or yearly.' },
-//     ],
-//   }),
-//   component: PricingPage,
-// });
-
 type Billing = 'monthly' | 'yearly';
 
 export default function PricingPage() {

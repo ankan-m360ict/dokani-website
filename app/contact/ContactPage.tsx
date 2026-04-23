@@ -3,25 +3,6 @@ import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle2, Sparkles } from 'lucide-react';
 import { useT } from '@/lib/i18n';
 
-// export const Route = createFileRoute('/contact')({
-//   head: () => ({
-//     meta: [
-//       { title: 'Contact — Dokani' },
-//       {
-//         name: 'description',
-//         content:
-//           'Talk to the Dokani team. Book a demo, ask a question or get help migrating your business.',
-//       },
-//       { property: 'og:title', content: 'Contact Dokani' },
-//       {
-//         property: 'og:description',
-//         content: 'Book a demo or talk to sales — we usually reply within an hour.',
-//       },
-//     ],
-//   }),
-//   component: ContactPage,
-// });
-
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
   const { t } = useT();

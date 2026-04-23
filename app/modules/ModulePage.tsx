@@ -5,25 +5,6 @@ import { modules } from '@/lib/modules';
 import { CTASection } from '@/components/site/CTASection';
 import { useT } from '@/lib/i18n';
 
-// export const Route = createFileRoute('/modules')({
-//   head: () => ({
-//     meta: [
-//       { title: 'Modules — Dokani' },
-//       {
-//         name: 'description',
-//         content:
-//           'Explore all 20+ Dokani modules: Sales, Purchase, Inventory, Accounts, Payroll, Reports and more.',
-//       },
-//       { property: 'og:title', content: 'Modules — Dokani' },
-//       {
-//         property: 'og:description',
-//         content: '20+ powerful modules covering every part of your business.',
-//       },
-//     ],
-//   }),
-//   component: ModulesPage,
-// });
-
 export default function ModulesPage() {
   const { t } = useT();
   return (

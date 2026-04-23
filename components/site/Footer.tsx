@@ -1,5 +1,4 @@
 'use client';
-import { Mail } from 'lucide-react';
 import { Logo } from './Logo';
 import { useT } from '@/lib/i18n';
 import Link from 'next/link';
@@ -17,7 +16,7 @@ export function Footer() {
             <p className='mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground'>
               {t('footer.desc')}
             </p>
-            <div className='mt-5 flex gap-2'>
+            {/* <div className='mt-5 flex gap-2'>
               {[Mail].map((Icon, i) => (
                 <a
                   key={i}
@@ -27,7 +26,7 @@ export function Footer() {
                   <Icon className='h-4 w-4' />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           <FooterCol

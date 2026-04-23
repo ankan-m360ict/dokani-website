@@ -6,11 +6,6 @@ type LogoProps = {
   showTagline?: boolean;
 };
 
-/**
- * Dokani brand logo — uses the official PNG wordmark.
- * The PNG already contains the "SALES SOFTWARE FOR SHOP" tagline,
- * so we render at a slightly larger size when showTagline is true.
- */
 export function Logo({ className, showTagline = false }: LogoProps) {
   return (
     <span className={`inline-flex items-center ${className ?? ''}`}>

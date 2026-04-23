@@ -4,25 +4,6 @@ import { Heart, Target, Eye } from 'lucide-react';
 import { CTASection } from '@/components/site/CTASection';
 import { useT } from '@/lib/i18n';
 
-// export const Route = createFileRoute('/about')({
-//   head: () => ({
-//     meta: [
-//       { title: 'About — Dokani' },
-//       {
-//         name: 'description',
-//         content:
-//           'Dokani was built to give every shop owner the tools that big retailers take for granted. This is our story.',
-//       },
-//       { property: 'og:title', content: 'About Dokani' },
-//       {
-//         property: 'og:description',
-//         content: 'Software built for dokandars, by people who understand them.',
-//       },
-//     ],
-//   }),
-//   component: AboutPage,
-// });
-
 export default function AboutPage() {
   const { t } = useT();
   const cards = [

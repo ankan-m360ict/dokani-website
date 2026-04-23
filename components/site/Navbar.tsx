@@ -5,10 +5,13 @@ import { Logo } from './Logo';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { useT } from '@/lib/i18n';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const { t } = useT();
+  const pathname = usePathname();
 
   const links = [
     { to: '/', label: t('nav.home') },
@@ -19,6 +22,10 @@ export function Navbar() {
     { to: '/contact', label: t('nav.contact') },
   ] as const;
 
+  const baseClass = 'rounded-full px-3.5 py-2 text-sm font-medium transition';
+  const inactiveClass = 'text-muted-foreground hover:bg-primary-soft hover:text-ink';
+  const activeClass = 'font-semibold text-ink bg-primary-soft';
+
   return (
     <header className='sticky top-0 z-50 w-full border-b border-border/60 bg-background/75 backdrop-blur-xl'>
       <div className='mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:px-8'>
@@ -27,17 +34,19 @@ export function Navbar() {
         </Link>
 
         <nav className='hidden items-center gap-1 md:flex'>
-          {links.map((l) => (
-            <Link
-              key={l.to}
-              href={l.to}
-              // activeOptions={{ exact: l.to === "/" }}
-              className='rounded-full px-3.5 py-2 text-sm font-medium text-muted-foreground transition hover:bg-primary-soft hover:text-ink'
-              // activeProps={{ className: "rounded-full px-3.5 py-2 text-sm font-semibold text-ink bg-primary-soft" }}
-            >
-              {l.label}
-            </Link>
-          ))}
+          {links.map((l) => {
+            const isActive = l.to === '/' ? pathname === '/' : pathname.startsWith(l.to);
+
+            return (
+              <Link
+                key={l.to}
+                href={l.to}
+                className={cn(baseClass, isActive ? activeClass : inactiveClass)}
+              >
+                {l.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className='hidden items-center gap-2 md:flex'>
