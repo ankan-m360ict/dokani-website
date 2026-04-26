@@ -26,8 +26,8 @@ const en = {
     label: 'Trusted by 40+ businesses',
   },
   cta: {
-    eyebrow: 'Ready when you are',
-    title: 'Run your shop like a Fortune\u00A0500 — without the price tag.',
+    eyebrow: 'Built for your business',
+    title: 'Run your shop easily, faster, and without hassle with Dokani.',
     sub: 'Free for 14 days. No credit card. Cancel anytime.',
     primary: 'Start Free Trial',
     secondary: 'Book a Demo',
@@ -383,8 +383,8 @@ const bn = {
     label: '৪০+ ব্যবসার বিশ্বস্ত পছন্দ',
   },
   cta: {
-    eyebrow: 'আপনি প্রস্তুত হলেই',
-    title: 'ফরচুন ৫০০-এর মতো দোকান চালান — দাম ছাড়াই।',
+    eyebrow: 'আপনার ব্যবসার জন্য তৈরি',
+    title: 'সহজে, দ্রুত আর ঝামেলা ছাড়াই আপনার দোকান পরিচালনা করুন দোকানি দিয়ে।',
     sub: '১৪ দিন ফ্রি। কোনো কার্ড নয়। যেকোনো সময় বাতিল।',
     primary: 'ফ্রি ট্রায়াল শুরু করুন',
     secondary: 'ডেমো বুক করুন',
