@@ -1,13 +1,15 @@
 'use client';
-import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Sparkles } from 'lucide-react';
 import { useT } from '@/lib/i18n';
+import { CheckCircle2, Mail, MapPin, Phone, Send, Sparkles } from 'lucide-react';
+import { useState } from 'react';
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
   const { t } = useT();
 
   const phoneNumber = '8801958398337';
+  const email = 'dokani.sup@gmail.com';
+  const subject = encodeURIComponent('New Contact Request from Dokani');
 
   return (
     <>
@@ -56,10 +58,10 @@ export default function ContactPage() {
                 {t('contact.email')}
               </p>
               <a
-                href='mailto:dokani.sup@gmail.com'
+                href={`mailto:${email}?subject=${subject}`}
                 className='mt-1 block text-sm font-medium text-ink hover:text-primary'
               >
-                dokani.sup@gmail.com
+                {email}
               </a>
             </div>
           </div>
@@ -129,6 +131,15 @@ Source: Dokani Website
               <CheckCircle2 className='h-12 w-12 text-primary' />
               <h3 className='mt-4 font-display text-2xl font-bold text-ink'>{t('contact.sent')}</h3>
               <p className='mt-2 max-w-sm text-sm text-muted-foreground'>{t('contact.sentD')}</p>
+              <button
+                onClick={() => {
+                  setSent(false);
+                }}
+                type='button'
+                className='mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition hover:shadow-glow sm:w-auto'
+              >
+                {t('contact.tryAgain')} <Send className='h-4 w-4' />
+              </button>
             </div>
           ) : (
             <>

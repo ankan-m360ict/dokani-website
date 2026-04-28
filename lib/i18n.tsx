@@ -356,7 +356,8 @@ const en = {
     fPhone: 'Phone',
     help: 'How can we help?',
     helpPh: 'Tell us a little about your business…',
-    send: 'Send message',
+    send: 'Send on WhatsApp',
+    tryAgain: 'Send again',
   },
 } as const;
 
@@ -711,7 +712,8 @@ const bn = {
     fPhone: 'ফোন',
     help: 'কীভাবে সাহায্য করতে পারি?',
     helpPh: 'আপনার ব্যবসা সম্পর্কে কিছু বলুন…',
-    send: 'মেসেজ পাঠান',
+    send: 'হোয়াটসঅ্যাপে পাঠান',
+    tryAgain: 'আবার পাঠান',
   },
 } as const;
 
